@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Keep it</title>
+</head>
+<body>
+    <header class="cabecera">
+        <h2>{keep<span>able</span>}</h2>
+        <p>Welcome to {keepable}</p>
+    </header>
+
+    <main class="main">
+        <nav class="nav">
+            <ul>
+                <li class="active">
+                     <span class="brackects">{ }</span>
+                     <a href="#">Notes</a>
+                </li>
+                <li> <i class="fa-solid fa-trash-can"></i> <a href="./delete.html" class="move">Trash</a></li>
+            </ul>
+        </nav>
+
+        <section class="section">
+            <div class="form">
+                <form id="formulario">
+                    <div class="box">
+                        <input id="title" type="text" placeholder="The title for my new note">
+                    </div>
+
+                    <div class="box">
+                        <textarea id="text" placeholder="This is the body for the note"></textarea>
+                    </div>
+
+                    <div class="more">
+                        <div class="hiddenPalette" id="paletas2">
+                            <span class="span1" id="rojo"></span>
+                            <span class="span2" id="azul"></span>
+                            <span class="span3" id="verde"></span>
+                            <span class="span4" id="amarillo"></span>
+                        </div>
+                        <button  id="palette">
+                            <i class="fa-solid fa-palette"></i>
+                        </button>
+                        <button type="submit"> keep it!</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="show">
+                <p>No notes to keep</p>
+            </div>
+
+            <article class="notes">
+    
+            </article>
+        </section>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
