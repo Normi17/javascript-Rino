@@ -95,11 +95,68 @@ formulario.addEventListener("submit", (e) => {
                card.append(buttons);
                notesContent.append(card);
         })
+        formulario.reset();
         
     }
     
-
+    formulario.addEventListener("submit", (e) => {
+        e.preventDefault();  
+    
+        // locales
+        let inputTitle = document.querySelector("#title").value;
+        let inputText = document.querySelector("#text").value;
+    
+        if(inputTitle === "" && inputText === ""){
+            return false;
+        }else if( inputTitle !==""  && inputText !== ""){
+            divEmpty.classList.add("hidden");
+    
+            let obj = {
+                inputTitle,
+                inputText
+            }
+        
+            userData.push(obj)
+        
+            //creamos etiquetas HTML para nuestro componente card 
+            
+            let card = document.createElement("DIV");
+            let title = document.createElement("H2");
+            let text = document.createElement("P");
+            card.style.backgroundColor = colorElegido
+        
+            let buttons = document.createElement("DIV");
+            let iconPalette =  document.createElement ("button");
+            let iconTrash =  document.createElement ("button");
+        
+            buttons.classList.add("more-buttons");
+            iconPalette.classList.add("fa-solid", "fa-palette");
+            iconTrash.classList.add("fa-solid", "fa-trash-can");
+            
+            card.classList.add("card");
+        
+            userData.forEach((element) => {
+                  title.textContent = element.inputTitle;
+                  text.textContent = element.inputText;
+        
+                  card.append(title);
+                  card.append(text);
+                  // iconPalette.classList.add("fa-solid fa-trash-can");
+                  // iconTrash.classList.add("fa-solid fa-palette");
+                   buttons.append(iconPalette);
+                   buttons.append(iconTrash);
+                   card.append(buttons);
+                   notesContent.append(card);
+            })
+            
+        }
+        
+    
+    });
+ 
+    
 });
+
 
 
 btnPalette.addEventListener("click", (e) => {
